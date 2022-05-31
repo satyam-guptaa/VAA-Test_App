@@ -1,0 +1,29 @@
+.location-form {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    height: 100px;
+    padding: 20px;
+    /* margin-left: 20px; */
+    justify-content: center;
+    align-items: flex-end;
+}
+.input-field {
+    /* align-items: center; */
+    margin: 0 10px;
+}
+.search-btn {
+    /* position: relative; */
+    /* left: 50%; */
+    margin-top: 10px;
+    border-radius: 15px !important;
+}
+.search-btn:hover {
+    background-color: tomato !important
+}
+.react-date-picker__wrapper {
+    width: 207px;
+    height: 38px;
+    border-radius: 0.25rem;
+    border: 1px solid rgb(206, 212, 218);
+}

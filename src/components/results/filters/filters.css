@@ -1,0 +1,47 @@
+.filter-section {
+    width: 300px;
+    /* border: 1px solid black; */
+    border-top: 1px solid tomato;
+    padding: 5px;
+    height: 610px; 
+    border-bottom: 1px solid tomato;
+    border-radius: 8px;
+    box-shadow: 0 0 10px grey;
+}
+.price-span{
+    display: block;
+}
+.price-span:hover{
+    cursor: pointer;
+}
+.rating-span{
+    display: block;
+}
+.rating-btn:hover {
+    background-color: black;
+    color: white;
+}
+.star {
+    color:#ffd700;
+}
+
+.rating-btn{
+    outline: none;
+    border: 1px solid gold;
+    border-radius: 20px ;
+    margin: 0 3px;
+}
+.facility-label:hover {
+    font-weight: bold;
+}
+
+.price-span:hover{
+    font-weight: bold;
+}
+.price-span:target {
+    color: blue;
+}
+.input-checkbox{
+    cursor: pointer;
+    margin-right: 3px;
+}
