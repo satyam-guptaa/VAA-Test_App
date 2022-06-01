@@ -2,7 +2,7 @@ import DatePicker from 'react-date-picker'
 import 'react-date-picker/dist/DatePicker.css'
 import '../form/form.css'
 
-export default function Form({location, handleLocationChange, dateValue, handleDateChange, handleSubmit, spin}) {
+export default function Form({location, departureDate, handleLocationChange, dateValue, handleDateChange, handleSubmit, spin}) {
     return (
         <form className="location-form">
               <div className='input-field'>
@@ -19,7 +19,7 @@ export default function Form({location, handleLocationChange, dateValue, handleD
                 <h5>Departure Date</h5>
                 <DatePicker data-testid="datepicker" placeholderText='Departure Date' value={dateValue} minDate={new Date(new Date().getTime() + 24 * 60 * 60 * 1000)} onChange={(value) => handleDateChange(value)} dateFormat='dd-MM-yyy'/>
               </div>
-              <button className='btn btn-danger search-btn input-field' data-testid="formBtn" onClick={handleSubmit}>Search</button>
+              <button className='btn btn-danger search-btn input-field' data-testid="formBtn" disabled={location === '' ? true : false} onClick={handleSubmit}>Search</button>
               {
               spin &&
                 <div className="spinner-border" role="status">

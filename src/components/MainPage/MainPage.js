@@ -113,7 +113,7 @@ export default function MainPage() {
     return ( 
       <>
         <ToastContainer/>
-        <Form location={location} handleLocationChange={handleLocationChange} dateValue={dateValue} handleDateChange={handleDateChange} handleSubmit={handleSubmit} spin={spin}/>
+        <Form location={location} departureDate={departureDate} handleLocationChange={handleLocationChange} dateValue={dateValue} handleDateChange={handleDateChange} handleSubmit={handleSubmit} spin={spin}/>
         <hr />
         {holidays.length > 0 && 
           <Results holidays={filteredHoliday} handlePriceFilter={handlePriceFilter} handleRatingFilter={handleRatingFilter} handleFacilityFilter={handleFacilityFilter} handleRemoveFilter={handleRemoveFilter}/>
