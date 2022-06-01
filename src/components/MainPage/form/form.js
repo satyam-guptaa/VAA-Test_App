@@ -2,7 +2,7 @@ import DatePicker from 'react-date-picker'
 import 'react-date-picker/dist/DatePicker.css'
 import '../form/form.css'
 
-export default function Form({location, departureDate, handleLocationChange, dateValue, handleDateChange, handleSubmit, spin}) {
+export default function Form({location, handleLocationChange, dateValue, handleDateChange, handleSubmit, spin}) {
     return (
         <form className="location-form">
               <div className='input-field'>
