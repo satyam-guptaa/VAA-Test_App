@@ -9,9 +9,16 @@ export default function Results({holidays, handlePriceFilter, handleRatingFilter
             <div className="filter-section">
                 <FiltersSection handlePriceFilter={handlePriceFilter} handleRatingFilter={handleRatingFilter} handleFacilityFilter={handleFacilityFilter} handleRemoveFilter={handleRemoveFilter} />
             </div>
-            <div className="card-flex">
-                {holidays.map(holiday => <Hotel key={holiday.hotel.id} holiday={holiday}/>)}
-            </div>
+            {holidays.length === 0 && 
+                <div className="card-flex">
+                  <h4 style={{"text-align": "center", "width": "100%", "margin": "auto"}}>No Hotel Found !!</h4>
+                </div>
+            }
+            {holidays.length > 0 && 
+                <div className="card-flex">
+                    {holidays.map(holiday => <Hotel key={holiday.hotel.id} holiday={holiday}/>)}
+                </div>
+            }
         </div>
     ); 
 }

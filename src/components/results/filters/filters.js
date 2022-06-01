@@ -32,7 +32,7 @@ export default function FiltersSection({handlePriceFilter, handleRatingFilter, h
         )
     }
     return (
-    <>
+    <>  
         <div className="price-filter">
             <h5 data-testid="priceFilter">Price</h5>
             {priceFunction([0,500])}
