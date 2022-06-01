@@ -47,8 +47,9 @@ export default function MainPage() {
       setSelectedFacilities([])
       setSelectedPrice([0,999999])
       setSelectedRating(null)
-      if(inputCheckbox) inputCheckbox.current.forEach(item => item.current.checked = false)},[holidays])
-
+    }
+    ,[holidays])
+    
     const handleLocationChange = (e) => {
       setLocation(e.target.value)
     }
@@ -67,7 +68,6 @@ export default function MainPage() {
       } catch (error) {
         toast.error("Something went wrong, Please try again later", {autoClose: 5000, position: 'top-right'});
         setSpin(false)
-        console.log(error)
       }
     }
 
@@ -76,7 +76,7 @@ export default function MainPage() {
     }
 
     const handleRatingFilter = (rating) => {
-      setSelectedRating(rating)   
+      setSelectedRating(rating)
     }
     
     const handleFacilityFilter = (e, inputRefs) => {
