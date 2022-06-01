@@ -8,6 +8,8 @@ import imgTwo from '../img/2.jpg'
 import imgThree from '../img/3.jpg'
 import imgFour from '../img/4.jpg'
 import MyCarousel from './carousel/carousel'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function MainPage() {
     const [location,setLocation] = useState('')
@@ -53,6 +55,7 @@ export default function MainPage() {
     const handleDateChange = (dat) => {
       setDateValue(dat)
     }
+
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
@@ -62,7 +65,9 @@ export default function MainPage() {
         setFilteredHoliday(response.data.holidays)
         setSpin(false)
       } catch (error) {
+        toast.error("Something went wrong, Please try again later", {autoClose: 5000, position: 'top-right'});
         setSpin(false)
+        console.log(error)
       }
     }
 
@@ -107,6 +112,7 @@ export default function MainPage() {
 
     return ( 
       <>
+        <ToastContainer/>
         <Form location={location} handleLocationChange={handleLocationChange} dateValue={dateValue} handleDateChange={handleDateChange} handleSubmit={handleSubmit} spin={spin}/>
         <hr />
         {holidays.length > 0 && 
