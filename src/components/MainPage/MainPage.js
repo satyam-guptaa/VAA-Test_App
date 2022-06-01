@@ -60,7 +60,7 @@ export default function MainPage() {
       e.preventDefault()
       try {
         setSpin(true)
-        const response = await axios.post("https://www.virginholidays.co.uk/cjs-search-api/search", data, {headers: {'Content-Type': 'application/json'}})
+        const response = await axios.post("/cjs-search-api/search", data, {headers: {'Content-Type': 'application/json'}})
         setHolidays(response.data.holidays)
         setFilteredHoliday(response.data.holidays)
         setSpin(false)
@@ -115,7 +115,7 @@ export default function MainPage() {
         <ToastContainer/>
         <Form location={location} departureDate={departureDate} handleLocationChange={handleLocationChange} dateValue={dateValue} handleDateChange={handleDateChange} handleSubmit={handleSubmit} spin={spin}/>
         <hr />
-        {holidays.length > 0 && 
+        {holidays.length > 0 && !spin && 
           <Results holidays={filteredHoliday} handlePriceFilter={handlePriceFilter} handleRatingFilter={handleRatingFilter} handleFacilityFilter={handleFacilityFilter} handleRemoveFilter={handleRemoveFilter}/>
         }
         {holidays.length === 0 &&
