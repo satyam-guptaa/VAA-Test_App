@@ -60,7 +60,7 @@ export default function MainPage() {
       e.preventDefault()
       try {
         setSpin(true)
-        const response = await axios.post(process.env.REACT_APP_URL, data, {headers: process.env.REACT_APP_HEADER})
+        const response = await axios.post("https://www.virginholidays.co.uk/cjs-search-api/search", data, {headers: {'Content-Type': 'application/json'}})
         setHolidays(response.data.holidays)
         setFilteredHoliday(response.data.holidays)
         setSpin(false)
