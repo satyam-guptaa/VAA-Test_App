@@ -45,7 +45,6 @@ export default function MainPage() {
       setSelectedFacilities([])
       setSelectedPrice([0,999999])
       setSelectedRating(null)
-      console.log(inputCheckbox)
       if(inputCheckbox) inputCheckbox.current.forEach(item => item.current.checked = false)},[holidays])
 
     const handleLocationChange = (e) => {
@@ -63,11 +62,10 @@ export default function MainPage() {
         setFilteredHoliday(response.data.holidays)
         setSpin(false)
       } catch (error) {
-        console.log(error)
         setSpin(false)
       }
     }
-    console.log(selectedRating)
+
     const handlePriceFilter = (rangeArray) => {
       setSelectedPrice(rangeArray)
     }
@@ -117,7 +115,7 @@ export default function MainPage() {
         {holidays.length === 0 &&
           <>
             <h1 style={{"textAlign": "center"}}>Welcome to Vigin Atlantic Holidays</h1>
-            <MyCarousel imgOne={imgOne} imgTwo={imgTwo} imgThree={imgThree} imgFour={imgFour}/>
+            <MyCarousel images={images}/>
           </>
         }
       </>
